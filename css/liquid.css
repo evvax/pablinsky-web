@@ -1,0 +1,24 @@
+.liquid {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 120vw;
+  height: 120vh;
+  overflow: hidden;
+  background: radial-gradient(circle at 30% 30%, #6e00ff 0%, transparent 40%),
+              radial-gradient(circle at 70% 70%, #00b7ff 0%, transparent 40%),
+              radial-gradient(circle at 50% 50%, #8f00ff 0%, transparent 40%);
+  filter: blur(100px);
+  animation: rotate 20s infinite linear;
+  z-index: -1;
+  pointer-events: none;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg) scale(1.8);
+  }
+  100% {
+    transform: rotate(360deg) scale(1.8);
+  }
+}
