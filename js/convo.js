@@ -6,13 +6,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const optionsContainer = select.querySelector(".options");
     const hiddenInput = select.nextElementSibling; // tu input hidden
 
-    // abrir/cerrar dropdown
+    // Open/close dropdown
     selected.addEventListener("click", () => {
       optionsContainer.style.display = optionsContainer.style.display === "flex" ? "none" : "flex";
       optionsContainer.style.flexDirection = "column";
     });
 
-    // seleccionar opción
+    // Select an option
     optionsContainer.querySelectorAll("div").forEach((option) => {
       option.addEventListener("click", () => {
         selected.textContent = option.textContent;
@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
 
-    // cerrar dropdown si se hace clic fuera
+    // Close dropdown if you click outside
     document.addEventListener("click", (e) => {
       if (!select.contains(e.target)) {
         optionsContainer.style.display = "none";

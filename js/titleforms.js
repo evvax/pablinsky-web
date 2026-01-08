@@ -2,11 +2,11 @@ const titleElement = document.getElementById('form-title');
 const titles = ['REGISTRO MERCH', 'FILTRO GRATIS'];
 let index = 0;
 
-// opcional: si el elemento no existe, lo avisamos y no ejecutamos el intervalo
+// Optional: if element does not exist, make a warning & not execute
 if (!titleElement) {
   console.error("No se encontró el elemento #form-title");
 } else {
-  // asegurar que el texto inicial coincide
+  // Make sure the initial text matchs
   titleElement.textContent = titles[index];
 
   setInterval(() => {

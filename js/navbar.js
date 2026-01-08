@@ -1,8 +1,8 @@
-// Seleccionamos todos los dots y todas las secciones
+// Selecting every dots and sections
 const dots = document.querySelectorAll('.navbar-flotante a.dot');
 const sections = document.querySelectorAll('section');
 
-// Función para mostrar solo una sección
+// Function to show only one section
 function showSection(sectionId) {
   sections.forEach(sec => sec.classList.add('section-hidden'));
 
@@ -11,36 +11,36 @@ function showSection(sectionId) {
 
   target.classList.remove('section-hidden');
 
-  // Restaurar display según el tamaño de pantalla
+  // Restore display based on screensize
   if (window.innerWidth >= 1024) {
     target.style.display = 'flex'; // desktop → flex
   } else {
-    target.style.display = 'block'; // móvil → vertical
+    target.style.display = 'block'; // mobile → vertical
   }
 }
 
-// Inicial: mostrar solo section1
+// Fist: only show section one
 showSection('section1');
 
-// Inicial: activar el primer dot
+// First: activate first dot
 dots.forEach((dot, i) => {
   dot.classList.toggle('active', i === 0);
 });
 
-// Evento click en cada dot
+// Click event on every dot
 dots.forEach(dot => {
   dot.addEventListener('click', e => {
     e.preventDefault();
     const targetId = dot.getAttribute('data-section');
     showSection(targetId);
 
-    // Actualizar clases active
+    // Update active classes
     dots.forEach(d => d.classList.remove('active'));
     dot.classList.add('active');
   });
 });
 
-// Opcional: actualizar display al redimensionar la ventana
+// Optional: update display when resizing window
 window.addEventListener('resize', () => {
   sections.forEach(sec => {
     if (!sec.classList.contains('section-hidden')) {
